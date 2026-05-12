@@ -1,0 +1,9 @@
+.products-container {
+  margin: 40px auto; 
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 30px; 
+  max-width: 1200px;
+  padding: 0 20px;
+}

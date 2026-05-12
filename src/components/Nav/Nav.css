@@ -1,0 +1,70 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* 1. Quitamos el subrayado a TODOS los links del nav */
+.nav-link, 
+.nav-cart {
+  text-decoration: none; 
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. Específicamente para el carrito */
+.nav-cart {
+  position: relative;
+  padding: 5px;
+  /* Forzamos que no herede colores de link visitado */
+  color: inherit; 
+}
+
+/* 3. El icono (emoji) */
+.cart-icon {
+  font-size: 1.3rem;
+  text-decoration: none; /* Refuerzo */
+}
+
+/* 4. El badge (el numerito) */
+.cart-badge {
+  background-color: #f0a1b5; /* Rosita */
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  /* Importante: que el número no herede el subrayado */
+  text-decoration: none; 
+}
+
+/* Hovers */
+.nav-link:hover {
+  color: #7eb67e;
+}
+
+.nav-link-special {
+  background-color: #7eb67e;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+}

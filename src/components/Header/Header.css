@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f8d7da;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none; /* ESTO quita la línea violeta del nombre */
+}
+
+.logo-container img {
+  height: 55px; /* Tamaño controlado para que no explote */
+  width: auto;
+}
+
+.logo-container h1 {
+  font-size: 1.3rem;
+  color: #7eb67e;
+  margin: 0;
+  text-decoration: none; /* Refuerzo para el texto */
+}

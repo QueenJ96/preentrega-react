@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Curso de Preparto (PIM)",
+    "price": 15000,
+    "category": "talleres",
+    "image": "/img/serviciopim.png",
+    "description": "Preparación integral para el nacimiento y la maternidad, cubriendo aspectos físicos y emocionales."
+    },
+  {
+    "id": 2,
+    "name": "Consulta Obstétrica",
+    "price": 8000,
+    "category": "servicios",
+    "image": "/img/serviciocontrol.png",
+    "description": "Atención personalizada y seguimiento profesional durante tu embarazo."
+    },
+  {
+    "id": 3,
+    "name": "Taller de Lactancia",
+    "price": 6500,
+    "category": "talleres",
+    "image": "/img/serviciolactancia.png",
+    "description": "Técnicas, consejos y apoyo para lograr una lactancia materna exitosa."
+    },
+  {
+    "id": 4,
+    "name": "Almohadón de Lactancia",
+    "price": 12000,
+    "category": "accesorios",
+    "image": "/img/servicio2.png",
+    "description": "Diseño ergonómico para mayor comodidad durante la alimentación del bebé.",
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "name": "Kit de Cuidados Postparto",
+    "price": 9500,
+    "category": "accesorios",
+    "image": "/img/serviciopostparto.png",
+    "description": "Elementos esenciales para tu recuperación y bienestar tras el parto.",
+    "stock": 8
+  },
+  {
+    "id": 6,
+    "name": "Gimnasia para Embarazadas",
+    "price": 7000,
+    "category": "servicios",
+    "image": "/img/servicio3.png",
+    "description": "Ejercicios adaptados para mantenerte activa y saludable en cada trimestre."
+    }
+]
