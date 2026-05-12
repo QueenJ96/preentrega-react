@@ -3,7 +3,7 @@ import { Item } from "../Item/Item";
 export const ItemDetail = ({ item }) => {
     return (
         <div className="detail-wrapper" style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
-            {/* Reutilizamos el Item pasándole el botón como children */}
+            
             <Item {...item}>
                 <p style={{ margin: '15px 0', fontSize: '0.9rem', color: '#555' }}>
                     {item.description}

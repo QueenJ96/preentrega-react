@@ -11,11 +11,11 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  text-decoration: none; /* ESTO quita la línea violeta del nombre */
+  text-decoration: none; 
 }
 
 .logo-container img {
-  height: 55px; /* Tamaño controlado para que no explote */
+  height: 55px; 
   width: auto;
 }
 
@@ -23,5 +23,24 @@
   font-size: 1.3rem;
   color: #7eb67e;
   margin: 0;
-  text-decoration: none; /* Refuerzo para el texto */
+  text-decoration: none; 
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; 
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem; 
+  }
 }

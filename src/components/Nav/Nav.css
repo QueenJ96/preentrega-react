@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-/* 1. Quitamos el subrayado a TODOS los links del nav */
+/* 1.  */
 .nav-link, 
 .nav-cart {
   text-decoration: none; 
@@ -21,23 +21,22 @@
   align-items: center;
 }
 
-/* 2. Específicamente para el carrito */
+/* 2.  carrito */
 .nav-cart {
   position: relative;
   padding: 5px;
-  /* Forzamos que no herede colores de link visitado */
   color: inherit; 
 }
 
 /* 3. El icono (emoji) */
 .cart-icon {
   font-size: 1.3rem;
-  text-decoration: none; /* Refuerzo */
+  text-decoration: none; 
 }
 
-/* 4. El badge (el numerito) */
+/* 4. El badge */
 .cart-badge {
-  background-color: #f0a1b5; /* Rosita */
+  background-color: #f0a1b5; 
   color: white;
   font-size: 0.7rem;
   font-weight: bold;
@@ -53,7 +52,6 @@
   justify-content: center;
   align-items: center;
   border: 2px solid white;
-  /* Importante: que el número no herede el subrayado */
   text-decoration: none; 
 }
 

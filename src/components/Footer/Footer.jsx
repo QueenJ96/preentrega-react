@@ -38,7 +38,7 @@ export const Footer = () => {
           <div className="footer-column">
             <h3>Contacto</h3>
             <p>📍 Buenos Aires, Argentina</p>
-            {/* Para el mail sí se puede usar <a> con mailto */}
+            
             <a href="mailto:contacto@nacerconestilo.com" className="footer-mail">
                ✉️ contacto@nacerconestilo.com
             </a>
