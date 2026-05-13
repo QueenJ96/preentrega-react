@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
-// --- 1. COMPONENTE MODAL ---
+// --- 1. COMPONENTE popup ---
 const ModalReserva = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
@@ -40,6 +41,11 @@ const ModalReserva = ({ isOpen, onClose }) => {
 const CartView = ({ items, onRemove, onClear }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    onClear(true); 
+  };
+
   return (
     <div style={{ padding: '40px', textAlign: 'center', minHeight: '60vh' }}>
       <h2 style={{ color: '#7eb67e' }}>Tu Carrito de Nacer con Estilo ✨</h2>
@@ -66,7 +72,7 @@ const CartView = ({ items, onRemove, onClear }) => {
           <div style={{ marginTop: '30px' }}>
             <h3 style={{ color: '#444' }}>Total: ${items.reduce((acc, el) => acc + el.price, 0)}</h3>
             <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginTop: '20px' }}>
-              <button onClick={onClear} style={{ backgroundColor: 'white', color: '#ff6b6b', border: '1px solid #ff6b6b', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}>
+              <button onClick={() => onClear(false)} style={{ backgroundColor: 'white', color: '#ff6b6b', border: '1px solid #ff6b6b', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}>
                 Vaciar Carrito
               </button>
               <button 
@@ -79,12 +85,12 @@ const CartView = ({ items, onRemove, onClear }) => {
           </div>
         </div>
       )}
-      <ModalReserva isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ModalReserva isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
 
-// --- 3. COMPONENTE PRINCIPAL APP (ESTO ES LO QUE FALTABA) ---
+// --- 3. COMPONENTE PRINCIPAL APP ---
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -101,24 +107,29 @@ function App() {
     setCart(cart.filter(item => item.id !== id));
   };
 
-  const clearCart = () => {
-    if (window.confirm("¿Querés vaciar el carrito?")) {
+  const clearCart = (isSilent = false) => {
+    if (isSilent || window.confirm("¿Querés vaciar el carrito?")) {
       setCart([]);
     }
   };
 
   return (
-    <> 
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}> 
       <Header cartCount={cart.length} />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer addToCart={addToCart} />} />
-        <Route 
-          path="/carrito" 
-          element={<CartView items={cart} onRemove={removeFromCart} onClear={clearCart} />} 
-        />
-      </Routes>
-    </>
+      
+      <main style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer addToCart={addToCart} />} />
+          <Route 
+            path="/carrito" 
+            element={<CartView items={cart} onRemove={removeFromCart} onClear={clearCart} />} 
+          />
+        </Routes>
+      </main>
+
+      <Footer /> 
+    </div>
   );
 }
 
