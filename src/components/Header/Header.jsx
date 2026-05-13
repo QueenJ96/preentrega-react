@@ -4,16 +4,17 @@ import Nav from '../Nav/Nav';
 import './Header.css';
 import logo from '../../assets/logo.png';
 
-const Header = () => {
+export const Header = ({ cartCount }) => {
   return (
-    <header className="header">
+    <header className="header"> {/* Usá la clase .header que ya tenés en el CSS */}
         <Link to="/" className="logo-container">
             <img src={logo} alt="Logo" />
             <h1>Nacer con Estilo</h1>
         </Link>
-        <Nav />
+        <Nav cartCount={cartCount} />  
     </header>
   );
 };
+
 
 export default Header;

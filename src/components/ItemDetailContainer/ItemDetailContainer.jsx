@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail"; 
 
-export const ItemDetailContainer = () => {
+export const ItemDetailContainer = ({ addToCart }) => {
     const { id } = useParams();
     const [itemDetail, setItemDetail] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -26,9 +26,8 @@ export const ItemDetailContainer = () => {
     if (!itemDetail) return <p>Producto no encontrado</p>;
 
     return (
-        <section>   
-            
-            <ItemDetail item={itemDetail} /> 
+        <section>               
+            <ItemDetail item={itemDetail} addToCart={addToCart} /> 
         </section>
     );
 };
